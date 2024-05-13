@@ -1,0 +1,15 @@
+.table-auto {
+  table-layout: auto;
+  width: 100%;
+  /* border: 1px solid grey; */
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid black; /* Sets a 1px solid black border for all cells */
+  padding: 5px; /* Adds some padding for better readability */
+}
+
+th {
+  background-color: #f2f2f2; /* Optional background color for headers */
+}

@@ -228,3 +228,25 @@
     transform: rotate(0deg);
   }
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px; /* Optional: Add spacing between columns */
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center;
+  margin: 10px 35px;
+}
+
+.width {
+  width: 300px;
+  height: 320;
+}
+
+.hotel-card {
+  /* width: 20%; */
+  /* border: 1px solid gray; */
+  border-radius: 20px;
+  background-color: grey;
+  cursor: pointer;
+}
