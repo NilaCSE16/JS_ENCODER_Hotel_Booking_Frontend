@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import "../../Components/Home/home.css";
 import "../Shared/Navbar/Navbar.css";
+import Image from "next/image";
 
 interface Room {
   id: number;
@@ -26,7 +27,7 @@ const ViewHotels = () => {
       const data = await response.json();
       //   setHotels(data.hotels);
       const hotels = data.hotels;
-      const srooms = hotels.filter((room) => room.id == roomId);
+      const srooms = hotels.filter((room: any) => room.id == roomId);
       const { rooms } = srooms[0];
       setTotalRooms(rooms);
       //   console.log(rooms);
@@ -42,18 +43,21 @@ const ViewHotels = () => {
   return (
     <>
       <h1 style={{ margin: "20px" }}>My Awesome Website</h1>
-      {totalRooms.length > 0 ? ( // Ensure data is available before rendering
+      {totalRooms?.length > 0 ? ( // Ensure data is available before rendering
         <div className="grid">
           {/* <div className="hotel-card width"> */}
-          {totalRooms.map((room) => (
+          {totalRooms?.map((room) => (
             <div
               key={room.id}
               className="hotel-card"
               style={{ width: "300px", height: "500px", marginBottom: "20px" }}
             >
-              <img
+              <Image
+                loader={() => room.images}
                 src={room.images}
-                alt={room.name}
+                alt="Room"
+                width={0}
+                height={0}
                 className="img"
                 style={{
                   width: "300px",

@@ -1,12 +1,13 @@
-"use client";
-
 import React from "react";
 import Home from "@/Components/Home/Home";
+import { Suspense } from "react";
 
 export default function Page({ children }: any) {
   return (
     <>
-      <Home></Home>
+      <Suspense fallback={<>Loading...</>}>
+        <Home></Home>
+      </Suspense>
     </>
   );
 }

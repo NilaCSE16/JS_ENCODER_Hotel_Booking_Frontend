@@ -68,7 +68,7 @@ const MyBooking = () => {
             type="text"
             name="type"
             placeholder="Room Type"
-            defaultValue={myRoom.type}
+            defaultValue={(myRoom as any).type}
             id="type"
             readOnly
           />
@@ -79,7 +79,7 @@ const MyBooking = () => {
             type="text"
             name="price"
             placeholder="Price"
-            defaultValue={myRoom.rate}
+            defaultValue={(myRoom as any).rate}
             id="price"
             readOnly
           />
