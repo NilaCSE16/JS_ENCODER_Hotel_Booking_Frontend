@@ -3,7 +3,7 @@
 import { useParams, useRouter } from "next/navigation";
 // import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import "../../Components/Home/Home.css";
+import "../../Components/Home/home.css";
 import "../Shared/Navbar/Navbar.css";
 
 interface Room {
