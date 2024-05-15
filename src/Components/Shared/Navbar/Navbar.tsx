@@ -9,7 +9,7 @@ import { IoMenuOutline } from "react-icons/io5";
 const Navbar = () => {
   const user = useSelector((state: any) => state.user.user).email;
   const dispatch = useAppDispatch();
-  // console.log(!user.email);
+  // console.log(user);
   const router = useRouter();
   const handleHome = () => {
     router.push("/");
@@ -35,12 +35,14 @@ const Navbar = () => {
         <h3 className={`btn ${showMenu ? "show" : ""}`} onClick={handleHome}>
           Home
         </h3>
-        <h3
-          className={`btn ${showMenu ? "show" : ""}`}
-          onClick={() => router.push("/showBook")}
-        >
-          My Bookings
-        </h3>
+        {user && (
+          <h3
+            className={`btn ${showMenu ? "show" : ""}`}
+            onClick={() => router.push("/showBook")}
+          >
+            My Bookings
+          </h3>
+        )}
         <button
           className={`btn ${showMenu ? "show" : ""}`}
           onClick={user ? handleLogout : () => router.push("/login")}
